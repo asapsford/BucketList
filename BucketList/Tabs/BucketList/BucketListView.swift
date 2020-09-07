@@ -20,7 +20,7 @@ struct BucketListView: View {
                             Image(systemName: "circle")
                 }
             }
-            navigationBarTitle("Bucket List")
+            .navigationBarTitle("Bucket List")
         }
     }
 }

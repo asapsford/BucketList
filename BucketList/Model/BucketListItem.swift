@@ -18,5 +18,5 @@ struct BucketListItem: Identifiable, Hashable {
     
     var imageName: String
     
-    var time: Int
+    var years: Int
 }
