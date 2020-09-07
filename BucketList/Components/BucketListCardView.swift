@@ -28,9 +28,13 @@ struct BucketListCardView: View {
     
     var body: some View {
         
+        return AnyView(
+        
         Button(action: action, label: {
-            Text("hi")
+            ExpandedListCardView(bucketListItem: bucketListItem)
         })
+            .buttonStyle(CardButtonStyle(background: { Color.white }))
+        )
     }
 }
 
