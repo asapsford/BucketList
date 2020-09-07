@@ -12,8 +12,15 @@ struct BucketListView: View {
     var body: some View {
         NavigationView {
             List {
-                Text("hi")
+                Section (header:
+                    Text("Dream Locations")
+                        .font(.body)
+                        .fontWeight(.semibold)
+                        .padding(.vertical, 4.0)) {
+                            Image(systemName: "circle")
+                }
             }
+            navigationBarTitle("Bucket List")
         }
     }
 }
