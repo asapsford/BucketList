@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 struct BucketListItem: Identifiable, Hashable {
     var id: String?
@@ -16,4 +17,8 @@ struct BucketListItem: Identifiable, Hashable {
     
     var description: String
 
+}
+
+class BucketListStore : ObservableObject {
+    @Published var bucketListItems = [BucketListItem]()
 }
