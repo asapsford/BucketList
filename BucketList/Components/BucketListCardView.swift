@@ -33,7 +33,7 @@ struct BucketListCardView: View {
         Button(action: action, label: {
             ExpandedListCardView(bucketListItem: bucketListItem)
         })
-            .buttonStyle(CardButtonStyle(background: { Color.blue }))
+            .buttonStyle(CardButtonStyle(background: { Color(red: 0.45, green: 0.95, blue: 0.8) }))
         )
     }
 }
@@ -41,7 +41,7 @@ struct BucketListCardView: View {
 struct BucketListCardView_Previews: PreviewProvider {
     static var previews: some View {
         
-        let bucketListItem = BucketListItem(id: UUID().uuidString, title: "Canada", description: "See the beautiful scenery")
+        let bucketListItem = BucketListItem(id: UUID().uuidString, title: "Canada")
         
         return BucketListCardView(bucketListItem: bucketListItem, action: {})
     }

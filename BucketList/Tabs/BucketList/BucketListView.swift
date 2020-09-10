@@ -12,7 +12,6 @@ import Combine
 struct BucketListView: View {
     
     @ObservedObject var bucketListStore = BucketListStore()
-    @State var title : String = ""
     @State var newToDo : String = ""
     
     var searchBar : some View {
@@ -25,8 +24,7 @@ struct BucketListView: View {
     }
     
     func addNewBucketListItem () {
-        bucketListStore.bucketListItems.append(BucketListItem(id: String(bucketListStore.bucketListItems.count + 1), title: title, description: newToDo))
-        self.title = ""
+        bucketListStore.bucketListItems.append(BucketListItem(id: String(bucketListStore.bucketListItems.count + 1), title: newToDo))
         self.newToDo = ""
     }
     

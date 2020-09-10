@@ -25,10 +25,7 @@ struct ExpandedListCardView: View {
         VStack(alignment: .leading, spacing: 4.0) {
                 Text(bucketListItem.title)
                     .font(.title)
-                Text(bucketListItem.description)
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .center)
             }
             Spacer()
         }
@@ -38,7 +35,7 @@ struct ExpandedListCardView: View {
 struct ExpandedListCardView_Previews: PreviewProvider {
     static var previews: some View {
          
-        let bucketListItem = BucketListItem(id: UUID().uuidString, title: "Canada", description: "See the beautiful scenery")
+        let bucketListItem = BucketListItem(id: UUID().uuidString, title: "Canada")
         
         return ExpandedListCardView(bucketListItem: bucketListItem)
     }
