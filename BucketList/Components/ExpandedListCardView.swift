@@ -38,7 +38,7 @@ struct ExpandedListCardView: View {
 struct ExpandedListCardView_Previews: PreviewProvider {
     static var previews: some View {
          
-        let bucketListItem = BucketListItem(id: UUID().uuidString, title: "Canada", description: "See the beautiful scenery", imageName: "", years: 2)
+        let bucketListItem = BucketListItem(id: UUID().uuidString, title: "Canada", description: "See the beautiful scenery")
         
         return ExpandedListCardView(bucketListItem: bucketListItem)
     }
