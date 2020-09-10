@@ -25,7 +25,6 @@
 		89C555782506BD9700DED216 /* BucketListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C555772506BD9700DED216 /* BucketListCardView.swift */; };
 		89C5557C2506C1D400DED216 /* ExpandedListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5557B2506C1D400DED216 /* ExpandedListCardView.swift */; };
 		89C5557F250A674B00DED216 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5557E250A674B00DED216 /* OnboardingView.swift */; };
-		89C55581250A67B400DED216 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C55580250A67B400DED216 /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 		89C555772506BD9700DED216 /* BucketListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListCardView.swift; sourceTree = "<group>"; };
 		89C5557B2506C1D400DED216 /* ExpandedListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedListCardView.swift; sourceTree = "<group>"; };
 		89C5557E250A674B00DED216 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		89C55580250A67B400DED216 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				89C5557E250A674B00DED216 /* OnboardingView.swift */,
-				89C55580250A67B400DED216 /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -244,7 +241,6 @@
 				89C5556425066CB900DED216 /* BucketListView.swift in Sources */,
 				894DF87C2504F98B0062D2FD /* AppDelegate.swift in Sources */,
 				894DF892250514190062D2FD /* MapView.swift in Sources */,
-				89C55581250A67B400DED216 /* OnboardingViewModel.swift in Sources */,
 				89C5557F250A674B00DED216 /* OnboardingView.swift in Sources */,
 				89C5555C25055C6500DED216 /* EditPinAnnotationView.swift in Sources */,
 				894DF87E2504F98B0062D2FD /* SceneDelegate.swift in Sources */,
