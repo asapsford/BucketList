@@ -8,26 +8,27 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
+    private let authenticationController = AuthenticationController()
+    private var authenticationStateCancellable: AnyCancellable?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = RootTabView()
-
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window
             window.makeKeyAndVisible()
+            
+            beginObservingAuthenticationState()
         }
     }
 
@@ -58,7 +59,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 
+// MARK: - Authentication Logic
+extension SceneDelegate {
+    
+    private func updateRootViewControllerForAuthenticationState(on window: UIWindow?, isAuthenticated: Bool) {
+        guard let window = window else {
+            return
+        }
+        
+        if isAuthenticated {
+            window.rootViewController = UIHostingController(rootView: RootTabView())
+        } else {
+            window.rootViewController = UIHostingController(rootView: OnboardingView(authenticationController: authenticationController))
+        }
+    }
+    
+    private func beginObservingAuthenticationState() {
+        authenticationStateCancellable = authenticationController.$isAuthenticated.sink(receiveValue: { (isAuthenticated) in
+            self.updateRootViewControllerForAuthenticationState(on: self.window, isAuthenticated: isAuthenticated)
+        })
+    }
+}
