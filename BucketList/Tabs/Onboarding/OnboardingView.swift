@@ -7,28 +7,44 @@
 //
 
 import SwiftUI
+import LocalAuthentication
 
 struct OnboardingView: View {
     
-  //  @ObservedObject private var viewModel: OnboardingViewModel
-    @State private var isUnlocked = false
+    private let authenticationController: AuthenticationController
+    
+    @State var error: Error?
+    
+    // MARK: Init
+    
+    init(authenticationController: AuthenticationController) {
+        self.authenticationController = authenticationController
+    }
+    
+    // MARK: View
     
     var body: some View {
         NavigationView{
             VStack{
-                NavigationLink(destination: RootTabView()) {
-                    Text("Login")
+                Button("Get Started") {
+                    self.authenticationController.authenticate(result: { (result) in
+                        if case .failure(let error) = result {
+                            self.error = error
+                        }
+                    })
                 }
-                       
-            
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(Color.white)
+                .clipShape(Capsule())
+            }
+            .navigationBarTitle("Welcome")
         }
-            // need to navigate to the bucket list tab view once click the button which will do the action of authenticating via biometrics
-        }
-    .navigationBarTitle("Welcome")
     }
 }
+
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(authenticationController: AuthenticationController())
     }
 }

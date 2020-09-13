@@ -17,11 +17,9 @@ struct BucketMapView: View {
     @State private var selectedPlace: MKPointAnnotation?
     @State private var showingPlaceDetails = false
     @State private var showingEditScreen = false
-    @State private var isUnlocked = false
     
     var body: some View {
         ZStack{
-            if isUnlocked{
                 MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, annotations: locations)
                     .edgesIgnoringSafeArea(.all)
                 Circle()
@@ -51,16 +49,7 @@ struct BucketMapView: View {
                         .padding(.trailing)
                     }
                 }
-            } else {
-                Button("Unlock Places") {
-                    self.authenticate()
-                }
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(Color.white)
-                .clipShape(Capsule())
             }
-        }
         .alert(isPresented: $showingPlaceDetails) {
             Alert(title: Text(selectedPlace?.title ?? "Unknown"), message:Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
                 self.showingEditScreen = true
@@ -99,26 +88,7 @@ struct BucketMapView: View {
             print("unable to save data")
         }
     }
-    func authenticate() {
-        let context = LAContext()
-        var error: NSError?
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Please authentiucate yourself to unlock your places."
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-                DispatchQueue.main.async {
-                    if success {
-                        self.isUnlocked = true
-                    } else {
-                        print("Sorry there has been a problem authenticating. Please try again.")
-                    }
-                }
-                
-            }
-        } else {
-            print("No biometrics")
-        }
-    }
+ 
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

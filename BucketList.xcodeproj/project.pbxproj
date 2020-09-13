@@ -25,6 +25,7 @@
 		89C555782506BD9700DED216 /* BucketListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C555772506BD9700DED216 /* BucketListCardView.swift */; };
 		89C5557C2506C1D400DED216 /* ExpandedListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5557B2506C1D400DED216 /* ExpandedListCardView.swift */; };
 		89C5557F250A674B00DED216 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5557E250A674B00DED216 /* OnboardingView.swift */; };
+		89C55587250E38D200DED216 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C55586250E38D200DED216 /* AuthenticationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		89C555772506BD9700DED216 /* BucketListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListCardView.swift; sourceTree = "<group>"; };
 		89C5557B2506C1D400DED216 /* ExpandedListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedListCardView.swift; sourceTree = "<group>"; };
 		89C5557E250A674B00DED216 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		89C55586250E38D200DED216 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				894DF87B2504F98B0062D2FD /* AppDelegate.swift */,
 				894DF87D2504F98B0062D2FD /* SceneDelegate.swift */,
+				89C55586250E38D200DED216 /* AuthenticationController.swift */,
 				89C5556725066D5E00DED216 /* Tabs */,
 				89C5557025067EFF00DED216 /* Model */,
 				89C5556A25066EBA00DED216 /* Components */,
@@ -251,6 +254,7 @@
 				89C5556625066D5800DED216 /* RootTabView.swift in Sources */,
 				89C555782506BD9700DED216 /* BucketListCardView.swift in Sources */,
 				89C5557C2506C1D400DED216 /* ExpandedListCardView.swift in Sources */,
+				89C55587250E38D200DED216 /* AuthenticationController.swift in Sources */,
 				89C5556F25067E0A00DED216 /* BucketListItem.swift in Sources */,
 				894DF8802504F98B0062D2FD /* BucketMapView.swift in Sources */,
 			);
