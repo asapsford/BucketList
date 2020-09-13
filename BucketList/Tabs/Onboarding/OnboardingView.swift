@@ -14,12 +14,19 @@ struct OnboardingView: View {
     @State private var isUnlocked = false
     
     var body: some View {
-        Text("Welcome to the worst welcoming page")
+        NavigationView{
+            VStack{
+                NavigationLink(destination: RootTabView()) {
+                    Text("Login")
+                }
+                       
             
+        }
             // need to navigate to the bucket list tab view once click the button which will do the action of authenticating via biometrics
         }
+    .navigationBarTitle("Welcome")
     }
-
+}
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView()
