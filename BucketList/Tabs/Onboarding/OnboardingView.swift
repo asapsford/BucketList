@@ -26,6 +26,8 @@ struct OnboardingView: View {
     var body: some View {
         NavigationView{
             VStack{
+                Text("An app to bucket up all your dream locations")
+                Spacer()
                 Button("Get Started") {
                     self.authenticationController.authenticate(result: { (result) in
                         if case .failure(let error) = result {
